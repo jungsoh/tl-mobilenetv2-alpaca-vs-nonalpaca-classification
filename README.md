@@ -3,7 +3,7 @@ We will be doing transfer learning on a pre-trained CNN to build an alpaca vs no
 
 ![an alpaca](images/alpaca.png")
 
-A pre-trained model is a network that's already been trained on a large dataset and saved, which allows you to use it to customize your own model cheaply and efficiently. We use MobileNetV2 that was designed to provide fast and computationally efficient performance. It has been pre-trained on [ImageNet](https://www.image-net.org/), a dataset containing over 14 million images and 1000 classes.
+A pre-trained model is a network that's already been trained on a large dataset and saved, which allows you to use it to customize your own model cheaply and efficiently. We use [MobileNetV2](https://ai.googleblog.com/2018/04/mobilenetv2-next-generation-of-on.html#:~:text=MobileNetV2%20is%20a%20significant%20improvement,object%20detection%20and%20semantic%20segmentation) that was designed to provide fast and computationally efficient performance. It has been pre-trained on [ImageNet](https://www.image-net.org/), a dataset containing over 14 million images and 1000 classes.
 
 In this project we perform the following tasks:
 - Create a dataset from a directory
@@ -18,9 +18,9 @@ We have 327 image files belonging to 2 classes in 'alpaca' and 'not alpaca' subd
 
 ![example images](images/9images.png)
 
-## Residual neural network architecture
-We used TensorFlow Keras Functional API to build the ResNet-50 model depicted below. 
+## MobileNetV2 architecture
+The base model used for the transfer learning (MobileNetV2) has the following architecture:
 
-![ResNet-50 architecture](images/resnet_kiank.png)
+![MobileNetV2 architecture](images/mobilenetv2.png)
 
-We trained the convolutional neural network for 10 epochs with the Keras model's `.fit()` method and evaluated its performance with the model's `evaluate()` method. The model shows the training accuracy of 0.93 and the test accuracy of 0.94.
+With the base model, we deleted the top layer (the 1000-class classification layer) and added a binary classification layer, while setting the rest of the base model untrainable. After only 5 epochs of training, the training accuracy is 0.79 and the validation accuracy is 0.77.
