@@ -14,9 +14,9 @@ In this project we perform the following tasks:
 I did this project in the [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks) course as part of the [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning).
 
 ## Datasets
-We have 1080 training examples and 120 test examples, where each example is of shape (64, 64, 3) with each of RGB channel image is of size 64x64. The examples are labeled as one of 0, 1, 2, 3, 4, and 5 for the corresponding digits. These labels are one-hot encoded to be used as the target output of the recognizer, as shown below.
+We have 327 image files belonging to 2 classes in 'alpaca' and 'not alpaca' subdirectories. We use Keras preprocessing with `image_data_set_from_directory()` to create training and validation datasets directly from these files. We use 80% for training and the remaining 20% for validation, resulting in 262 training examples and 65 validation examples. Some examples from the training dataset:
 
-![One-hot encoding of class labels](images/signs_data_kiank.png)
+![example images](images/9images.png)
 
 ## Residual neural network architecture
 We used TensorFlow Keras Functional API to build the ResNet-50 model depicted below. 
