@@ -1,5 +1,5 @@
 # Transfer learning with MobileNetV2: Alpaca vs non-alpaca classification
-We will be doing transfer learning on a pre-trained CNN to build an alpaca vs non-alpaca classifier.
+We do transfer learning on a pre-trained CNN to build an alpaca vs non-alpaca classifier.
 
 ![an alpaca](images/alpaca.png")
 
